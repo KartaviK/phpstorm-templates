@@ -2,6 +2,63 @@
 
 ## PHP
 
+### PHP Class (file)
+
+```php
+<?php
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+#end
+
+/**
+ * Class ${NAME}
+ * @package ${NAMESPACE}
+ */
+class ${NAME}
+{
+
+}
+
+```
+
+### PHP Interface (file)
+
+```php
+<?php
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+#end
+
+/**
+ * Interface ${NAME}
+ * @package ${NAMESPACE}
+ */
+interface ${NAME}
+{
+
+}
+
+```
+
+### PHP Trait (file)
+
+```php
+<?php
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+#end
+
+/**
+ * Trait ${NAME}
+ * @package ${NAMESPACE}
+ */
+trait ${NAME}
+{
+
+}
+
+```
+
 ### PHPUnit 6 (file)
 
 ```php
@@ -31,6 +88,17 @@ class ${NAME} extends TestCase
 
 ```
 
+### PHP Array (file)
+
+```php
+<?php
+
+return [
+    ${END}
+];
+
+```
+
 ### PHP Getter (snippet)
 
 ```php
@@ -43,4 +111,13 @@ public ${STATIC} function ${GET_OR_IS}${NAME}()#if(${RETURN_TYPE}): ${RETURN_TYP
 #end
 }
 
+```
+
+### PHPUnit test method (snippet)
+
+```php
+public function test${CAPITALIZED_NAME}(): void
+{
+
+}
 ```
