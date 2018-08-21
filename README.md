@@ -1,4 +1,4 @@
-# PHP templates for PhpStorm
+# Files/snippets templates for PhpStorm
 
 ## PHPUnit 6
 
