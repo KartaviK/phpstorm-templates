@@ -6,7 +6,9 @@
 
 ```php
 <?php
+
 #if (${NAMESPACE})
+
 namespace ${NAMESPACE};
 #end
 
@@ -25,7 +27,9 @@ class ${NAME}
 
 ```php
 <?php
+
 #if (${NAMESPACE})
+
 namespace ${NAMESPACE};
 #end
 
@@ -45,6 +49,7 @@ interface ${NAME}
 ```php
 <?php
 #if (${NAMESPACE})
+
 namespace ${NAMESPACE};
 #end
 
@@ -64,6 +69,7 @@ trait ${NAME}
 ```php
 <?php
 #if (${NAMESPACE})
+
 namespace ${NAMESPACE};
 #end
 
