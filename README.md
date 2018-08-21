@@ -2,7 +2,7 @@
 
 ## PHP
 
-### PHP Class (file)
+### Class (file)
 
 ```php
 <?php
@@ -21,7 +21,7 @@ class ${NAME}
 
 ```
 
-### PHP Interface (file)
+### Interface (file)
 
 ```php
 <?php
@@ -40,7 +40,7 @@ interface ${NAME}
 
 ```
 
-### PHP Trait (file)
+### Trait (file)
 
 ```php
 <?php
@@ -59,7 +59,7 @@ trait ${NAME}
 
 ```
 
-### PHPUnit 6 (file)
+### Unit 6 (file)
 
 ```php
 <?php
@@ -83,12 +83,18 @@ use PHPUnit\Framework\TestCase;
  */
 class ${NAME} extends TestCase
 {
+    /** @var ${TESTED_NAME} */
+    protected $fake${TESTED_NAME};
 
+    protected function setUp(): void
+    {
+        $this->fake${TESTED_NAME} = new ${TESTED_NAME}();
+    }
 }
 
 ```
 
-### PHP Array (file)
+### Array (file)
 
 ```php
 <?php
@@ -99,7 +105,7 @@ return [
 
 ```
 
-### PHP Getter (snippet)
+### Getter (snippet)
 
 ```php
 public ${STATIC} function ${GET_OR_IS}${NAME}()#if(${RETURN_TYPE}): ${RETURN_TYPE}#else#end
@@ -113,11 +119,44 @@ public ${STATIC} function ${GET_OR_IS}${NAME}()#if(${RETURN_TYPE}): ${RETURN_TYP
 
 ```
 
-### PHPUnit test method (snippet)
+### Unit 6 test method (snippet) (php 7.1+)
 
 ```php
 public function test${CAPITALIZED_NAME}(): void
 {
 
 }
+```
+
+### Unit 6 test method (snippet) (php 7.1-)
+
+```php
+public function test${CAPITALIZED_NAME}()
+{
+
+}
+```
+
+### Public constant (snippet) (php 7.1+)
+
+```php
+public const $NAME$ = $VALUE$;$END$
+```
+
+### Protected contant (snippet) (php 7.1+)
+
+```php
+protected const $NAME$ = $VALUE$;$END$
+```
+
+### Private constant (snippet) (php 7.1+)
+
+```php
+private const $NAME$ = $VALUE$;$END$
+```
+
+### Constant (snippet) (php 7.1-)
+
+```php
+const $NAME$ = $VALUE$;$END$ 
 ```
