@@ -6,7 +6,6 @@
 
 ```php
 <?php
-
 #if (${NAMESPACE})
 
 namespace ${NAMESPACE};
@@ -27,7 +26,6 @@ class ${NAME}
 
 ```php
 <?php
-
 #if (${NAMESPACE})
 
 namespace ${NAMESPACE};
