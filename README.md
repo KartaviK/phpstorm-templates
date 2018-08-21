@@ -1,5 +1,7 @@
 # PHP templates for PhpStorm
 
+## PHPUnit 6
+
 ```php
 <?php
 #if (${NAMESPACE})
