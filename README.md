@@ -84,11 +84,11 @@ use PHPUnit\Framework\TestCase;
 class ${NAME} extends TestCase
 {
     /** @var ${TESTED_NAME} */
-    protected $fake${TESTED_NAME};
+    protected ${DS}fake${TESTED_NAME};
 
     protected function setUp(): void
     {
-        $this->fake${TESTED_NAME} = new ${TESTED_NAME}();
+        ${DS}this->fake${TESTED_NAME} = new ${TESTED_NAME}();
     }
 }
 
@@ -100,7 +100,7 @@ class ${NAME} extends TestCase
 <?php
 
 return [
-    ${END}
+    
 ];
 
 ```
