@@ -1,6 +1,8 @@
 # Files/snippets templates for PhpStorm
 
-## PHPUnit 6
+## PHP
+
+### PHPUnit 6 (file)
 
 ```php
 <?php
@@ -26,4 +28,19 @@ class ${NAME} extends TestCase
 {
 
 }
+
+```
+
+### PHP Getter (snippet)
+
+```php
+public ${STATIC} function ${GET_OR_IS}${NAME}()#if(${RETURN_TYPE}): ${RETURN_TYPE}#else#end
+{
+#if (${STATIC} == "static")
+    return self::$${FIELD_NAME};
+#else
+    return $this->${FIELD_NAME};
+#end
+}
+
 ```
