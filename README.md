@@ -119,7 +119,7 @@ class ${NAME} extends \Exception
     #foreach (${VARIABLE} in $VARIABLES)
     #set ($SEPARATED = $VARIABLE.split(" "))
     #if ($SEPARATED.size() == 2)
-    /** @var $SEPARATED.get(0) ${DS}$SEPARATED.get(1) */
+    /** @var $SEPARATED.get(0)|null */
     protected ${DS}$SEPARATED.get(1);
 
     #else
@@ -158,7 +158,7 @@ class ${NAME} extends \Exception
     #set ($VAR = $SEPARATED.get(1))
     #set($FIRST_LETTER = $VAR.substring(0, 1).toUpperCase())
     #set($REST = $VAR.substring(1))
-    public function get${FIRST_LETTER}${REST}(): $SEPARATED.get(0)
+    public function get${FIRST_LETTER}${REST}(): ?$SEPARATED.get(0)
     {
         return ${DS}this->$VAR;
     }
