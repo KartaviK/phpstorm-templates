@@ -201,10 +201,10 @@ namespace Project\Exceptions;
  */
 class InvalidArgumentsException extends \Exception
 {
-    /** @var string $arg1 */
+    /** @var string|null */
     protected $arg1;
 
-    /** @var int $arg2 */
+    /** @var int|null */
     protected $arg2;
 
     protected $arg3;
@@ -225,12 +225,12 @@ class InvalidArgumentsException extends \Exception
         parent::__construct($message, $code, $previous);
     }
 
-    public function getArg1(): string
+    public function getArg1(): ?string
     {
         return $this->arg1;
     }
 
-    public function getArg2(): int
+    public function getArg2(): ?int
     {
         return $this->arg2;
     }
