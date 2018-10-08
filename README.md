@@ -243,17 +243,6 @@ class InvalidArgumentsException extends \Exception
 
 ```
 
-### Array (file)
-
-```php
-<?php
-
-return [
-    
-];
-
-```
-
 ### Getter (snippet)
 
 ```php
