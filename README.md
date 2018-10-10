@@ -243,6 +243,143 @@ class InvalidArgumentsException extends \Exception
 
 ```
 
+### Custom Entity (file)
+
+```php
+<?php
+#set ($VARIABLES = $INPUT.split(","))
+#set (${VARIABLE} = "")
+#if (${NAMESPACE})
+
+namespace ${NAMESPACE};
+#end
+
+/**
+ * Class ${NAME}
+ * @package ${NAMESPACE}
+ */
+class ${NAME}
+{
+    #foreach (${VARIABLE} in $VARIABLES)
+    #set ($SEPARATED = $VARIABLE.split(" "))
+    #if ($SEPARATED.size() == 2)
+    /** @var $SEPARATED.get(0) */
+    protected ${DS}$SEPARATED.get(1);
+    
+    #else
+    protected ${DS}$SEPARATED.get(0);
+    
+    #end
+    #end
+    public function __construct(
+        #set ($count = 0)
+        #foreach (${VARIABLE} in $VARIABLES)
+        #set ($count = $count + 1)
+        #set ($SEPARATED = $VARIABLE.split(" "))
+        #if ($SEPARATED.size() == 2)
+        $SEPARATED.get(0) ${DS}$SEPARATED.get(1) = null#if ($count != $VARIABLES.size()),#end
+        #else
+        ${DS}$SEPARATED.get(0) = null#if ($count != $VARIABLES.size()),#end
+        #end
+        #end
+    ) {
+        #foreach (${VARIABLE} in $VARIABLES)
+        #set ($SEPARATED = $VARIABLE.split(" "))
+        #if ($SEPARATED.size() == 2)
+        ${DS}this->$SEPARATED.get(1) = ${DS}$SEPARATED.get(1);
+        #else
+        ${DS}this->$SEPARATED.get(0) = ${DS}$SEPARATED.get(0);
+        #end
+        #end
+    }
+    #foreach (${VARIABLE} in $VARIABLES)
+    #set($SEPARATED = $VARIABLE.split(" "))
+    #if ($SEPARATED.size() == 2)
+    #set ($VAR = $SEPARATED.get(1))
+    #set($FIRST_LETTER = $VAR.substring(0, 1).toUpperCase())
+    #set($REST = $VAR.substring(1))
+    
+    public function get${FIRST_LETTER}${REST}(): $SEPARATED.get(0)
+    {
+        return ${DS}this->$VAR;
+    }
+    #else
+    #set($FIRST_LETTER = $SEPARATED.get(0).substring(0, 1).toUpperCase())
+    #set($REST = $SEPARATED.get(0).substring(1))
+    
+    public function get${FIRST_LETTER}${REST}()
+    {
+        return ${DS}this->$SEPARATED.get(0);
+    }
+    #end
+    #end
+}
+
+```
+
+#### Rules
+
+- in menu you must choose `new => PHP Class`
+- between type and variable separator: `" "`
+- between arguments separator: `","`
+- nothing must be between arguments if type is not set
+
+#### Example
+
+- NAME: `User`
+- NAMESAPCE: `Project\Entities`
+- INPUT: `string name,int age,float weight`
+
+Output:
+
+```php
+<?php
+
+namespace Project\Entities;
+
+/**
+ * Class User
+ * @package Project\Entities
+ */
+class User
+{
+    /** @var string */
+    protected $name;
+
+    /** @var int */
+    protected $age;
+
+    /** @var float */
+    protected $weight;
+
+    public function __construct(
+        string $name = null,
+        int $age = null,
+        float $weight = null
+    ) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->weight = $weight;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getAge(): int
+    {
+        return $this->age;
+    }
+
+    public function getWeight(): float
+    {
+        return $this->weight;
+    }
+}
+
+```
+
 ### Getter (snippet)
 
 ```php
