@@ -4,6 +4,28 @@
 
 ### Class (file)
 
+#### Classic style
+
+```php
+<?php
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
+/**
+ * Class ${NAME}
+ * @package ${NAMESPACE}
+ */
+class ${NAME}
+{
+
+}
+
+```
+
+#### Symfony style
+
 ```php
 <?php
 #if (${NAMESPACE})
@@ -11,6 +33,27 @@
 namespace ${NAMESPACE};
 #end
 
+/**
+ * Class ${NAME}.
+ */
+class ${NAME}
+{
+
+}
+
+```
+
+#### Style with strict type declaring
+
+```php
+<?php
+
+declare(strict_types=1);
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
 /**
  * Class ${NAME}
  * @package ${NAMESPACE}
@@ -24,13 +67,56 @@ class ${NAME}
 
 ### Interface (file)
 
+#### Classic style
+
 ```php
 <?php
+
 #if (${NAMESPACE})
-
 namespace ${NAMESPACE};
-#end
 
+#end
+/**
+ * Interface ${NAME}
+ * @package ${NAMESPACE}
+ */
+interface ${NAME}
+{
+
+}
+
+```
+
+#### Symfony style
+
+```php
+<?php
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
+/**
+ * Interface ${NAME}.
+ */
+interface ${NAME}
+{
+
+}
+
+```
+
+#### Style with strict type declaring
+
+```php
+<?php
+
+declare(strict_types=1);
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
 /**
  * Interface ${NAME}
  * @package ${NAMESPACE}
@@ -44,13 +130,56 @@ interface ${NAME}
 
 ### Trait (file)
 
+#### Classic style
+
 ```php
 <?php
+
 #if (${NAMESPACE})
-
 namespace ${NAMESPACE};
-#end
 
+#end
+/**
+ * Trait ${NAME}
+ * @package ${NAMESPACE}
+ */
+trait ${NAME}
+{
+
+}
+
+```
+
+#### Symfony style
+
+```php
+<?php
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
+/**
+ * Trait ${NAME}.
+ */
+trait ${NAME}
+{
+
+}
+
+```
+
+#### Style with strict type declaring
+
+```php
+<?php
+
+declare(strict_types=1);
+
+#if (${NAMESPACE})
+namespace ${NAMESPACE};
+
+#end
 /**
  * Trait ${NAME}
  * @package ${NAMESPACE}
